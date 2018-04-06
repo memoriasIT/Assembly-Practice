@@ -1,6 +1,6 @@
 .data
-len:        .word 8
-datos:      .word 8,-3,4,-7,9,-7,6,-1
+len:        .word 10
+datos:      .word -35, -2, -3, -45, -3, -90, -4, -67, -32, -44
 res:        .word 0
  
 .text
@@ -16,20 +16,22 @@ maxmin:
 		mov r4, r3
 		
 		loop:
-		cmp r1, #0
+		cmp r1, #1
 		beq rango		@despues de iterar calcular rango
 		
 		ldr r0, [r2], #4 @sacar nuevos valores
 		cmp r3, r0
-		movlt r3, r0	@save new min
+		movlt r3, r0	@save new max
 		
 		cmp r4, r0
-		movgt r4, r0	@save new max
+		movgt r4, r0	@save new min
 			
 		sub r1, #1
 		b loop		
 rango:
 		@r0 = max - min
-		ldr r0, =res
-		sub r0, r4, r3
+		ldr r5, =res
+		sub r0, r3, r4
+		str r0, [r5]
+
 		bx lr
