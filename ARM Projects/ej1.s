@@ -1,3 +1,7 @@
+@Escribe un programa en ensamblador ARM que dado un vector datos de números enteros y de longitud len escriba en res la amplitud del rango de los números almacenados en dicho vector. Es decir, debe escribir en res la diferencia entre el valor máximo y mínimo del vector (en el ejemplo, res = máximo(datos)-mínimo(datos) = 9 – (-7) = 16).
+@Para probar el código podéis usar el vector  que aparece a continuación. No olvidéis que se trata de un ejemplo, y que el programa debería funcionar para cualquier tipo de vector (de cualquier tamaño y con distintos números enteros).
+@El fichero con el programa debe llamarse ej1.s
+
 .data
 len:        .word 10
 datos:      .word -35, -2, -3, -45, -3, -90, -4, -67, -32, -44
